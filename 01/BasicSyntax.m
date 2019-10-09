@@ -54,4 +54,37 @@ x(end +1) = 0 % Adds one element to the end of the array.
  mean(my_stocks, 2) % Calculate the mean across columns.
  corr(my_stocks) % Calculate correlations.
  
+ % SOLUTIONS:
+ % a) Create a matrix that excludes day 27th.
+ my_stocks(27,:) = [] % Deletes row 27
+ [my_stocks(1:26, :) ; my_stocks(28:end,:)]
+ 
+ % b) Calculate the relative return during the first week (5 days).
+ (stocks(5,:)-stocks(1,:))./stocks(1,:)
+ 
+ % c) Calculate the correlation matrix of stocks 2,4,7
+ corr(stocks(:,[2,4,7]))
+ 
+ 
+ % QUICK PLOTS
+ plot(stocks)
+ plot(stocks(:,1)) % Shows only one stock
+ plot(cumsum(stocks)) % Apply plots to outputs of functions
+ plot(stocks(:,[1,2])) % Two time series at the same time
+ plot(stocks(:,1),stocks(:,2),'r+') % Correlation between two stocks. Different color/marker
+ 
+ 
+% More on matrices:
+
+eye(5), zeros(5), ones(5) % identity matrix, zeros, ones 
+
+
+%%
+eye(5)
+
+
+% Another cell
+
+%% 
+zeros(5)
 
